@@ -151,7 +151,7 @@ function isArgValid(outputType) {
 function generateImageArray(str, ruled, width, rawText) {
   const imgArray = [];
   str.forEach((page) => {
-    const baseImage = new Jimp(rawText.length * 18, width + 5, "#ffffff");
+    const baseImage = new Jimp(rawText.length * 18, width + 10, "#ffffff");
     let y = 0;
     page.forEach((line) => {
       let x = 0;

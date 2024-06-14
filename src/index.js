@@ -151,10 +151,10 @@ function isArgValid(outputType) {
 function generateImageArray(str, ruled, width) {
   const imgArray = [];
   str.forEach((page) => {
-    const baseImage = new Jimp(18 * width + 100, 50 * width + 100, "#ffffff");
-    let y = 50;
+    const baseImage = new Jimp(width, width, "#ffffff");
+    let y = 0;
     page.forEach((line) => {
-      let x = 50;
+      let x = 0;
       line.split("").forEach((character) => {
         if (symbols.includes(character)) {
           baseImage.composite(

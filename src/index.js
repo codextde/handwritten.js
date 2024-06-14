@@ -148,10 +148,10 @@ function isArgValid(outputType) {
   return supportedOutputTypes.concat(["pdf"]).includes(outputType);
 }
 
-function generateImageArray(str, ruled, width) {
+function generateImageArray(str, ruled, width, rawText) {
   const imgArray = [];
   str.forEach((page) => {
-    const baseImage = new Jimp(width, str.length * 30, "#ffffff");
+    const baseImage = new Jimp(rawText.length * 18, width + 5, "#ffffff");
     let y = 0;
     page.forEach((line) => {
       let x = 0;
@@ -284,7 +284,7 @@ async function main(rawText = "", optionalArgs = {}) {
       }
     }
   }
-  const imageArray = generateImageArray(str, ruled, width);
+  const imageArray = generateImageArray(str, ruled, width, rawText);
   return generateImages(imageArray, outputType);
 }
 module.exports = main;

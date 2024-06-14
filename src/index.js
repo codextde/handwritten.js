@@ -180,7 +180,7 @@ function generateImageArray(str, ruled, width) {
       });
       y += 50;
     });
-    imgArray.push(baseImage.resize(2480, 3508));
+    imgArray.push(baseImage); // Remove resize to A4 size
   });
   return imgArray;
 }

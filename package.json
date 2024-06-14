@@ -56,7 +56,7 @@
     "handwritten.js": "src/bin.js"
   },
   "scripts": {
-    "build": "npm i && eslint . --fix && browserify -e src/index.js -s handwritten -o docs/handwritten.js && minify docs/handwritten.js -o docs/handwritten.js",
+    "build": "browserify -e src/index.js -s handwritten -o docs/handwritten.js",
     "minor": "npm run build && npm version minor && npm run release",
     "release": "git push && npm publish",
     "test": "mocha",
